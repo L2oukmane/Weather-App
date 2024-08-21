@@ -1,0 +1,57 @@
+*{
+margin:0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background-color: #222;
+}
+
+.card{
+    width: 90%;
+    text-align: center;
+    max-width: 470px;
+    background: linear-gradient(135deg, #00feba, #5b548a);
+    color:#fff;
+    border-radius: 20px;
+    margin: 100px auto 0;
+    padding: 40px 35px;
+}
+
+.search{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width:100%;
+
+}
+
+
+.search  input{
+    border: 0;
+    outline: 0;
+    background-color: #ebfffc;
+    color:#555;
+    padding: 10px 25px;
+    height: 60px;
+    flex: 1;
+    border-radius: 30px;
+    margin-right: 16px;
+    font-size: 18px;
+}
+
+.search button{
+    border:0;
+    outline: 0;
+    background-color: #ebfffc;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.search button img{
+    width: 16px;
+}
