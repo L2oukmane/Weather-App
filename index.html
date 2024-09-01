@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./images/weather-2021-12-07.avif">
 
 </head>
 <body>
@@ -36,5 +37,30 @@
         </div>
     </div>
     
+
+    <script>
+        const apiKey = "6a20c6486a97335d4671d8ac5a727a7e";
+        const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
+        const searchBox = document.querySelector(".search input");
+        const searchBtn = document.querySelector(".search button");
+        
+
+        async function checkWeather(city){
+            const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
+            const data = await response.json();
+            console.log(data);
+
+            document.querySelector(".city").innerHTML = data.name;
+            document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°C";
+            document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
+            document.querySelector(".wind").innerHTML = data.wind.speed + "km/h";
+        }
+
+        searchBtn.addEventListener("click" ,()=> {
+            checkWeather(searchBox.value);
+        })
+        
+        
+    </script>
 </body>
 </html>
